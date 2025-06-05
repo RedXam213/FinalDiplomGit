@@ -1,7 +1,7 @@
-import Admin from"./page/Admin"
+import Admin from"./page/AdminPage"
 import Shop from "./page/Shop"
 import DevicePage from "./page/DevicePage"
-import Auth from "./page/Auth"
+import Auth from "./page/Authentication"
 import { ADMIN_ROUTE, DEVICE_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from "./utils/consts"
 
 export const authRoutes = [
