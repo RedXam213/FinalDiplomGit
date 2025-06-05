@@ -6,7 +6,6 @@ import UserStore from './store/UserStore';
 import DeviceStore from './store/DeviceStore';
 import BasketStore from './store/BasketStore';
 import { Context } from './store/context'; 
-import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

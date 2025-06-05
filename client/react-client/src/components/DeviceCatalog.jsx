@@ -4,7 +4,7 @@ import {Context} from "../store/context";
 import {Row, Container} from "react-bootstrap";
 import DeviceItem from "./DeviceItem";
 
-const DeviceList = observer(() => {
+const DeviceCatalog = observer(() => {
     const {device} = useContext(Context)
 
     return (
@@ -20,4 +20,4 @@ const DeviceList = observer(() => {
     );
 });
 
-export default DeviceList;
+export default DeviceCatalog;
