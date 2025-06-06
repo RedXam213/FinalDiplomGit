@@ -8,14 +8,13 @@ import { check } from './components/axiosHttp/userApi';
 import { Spinner } from 'react-bootstrap' 
 import Footer from './components/Footer';
 
-
 const App = observer(() => {
     const {user} = useContext(Context) 
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        if (!token) { //заглушка если токена совсем нету, что бы не выбивало постоянную ошибку 401 в лог. Можно удалить
+        if (!token) { 
             user.setAuth(false) 
             setLoading(false)
             return
@@ -28,11 +27,9 @@ const App = observer(() => {
         }).finally(()=> setLoading(false))
         
     },[])
-
     if(loading) {
-        return <Spinner animation= {"grow"}/>
+        return <Spinner animation= {"border"}/>
     }
-
     return ( 
         <BrowserRouter>
           <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>

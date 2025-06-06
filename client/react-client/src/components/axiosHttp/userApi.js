@@ -19,7 +19,7 @@ export const check = async () => {
     localStorage.setItem('token', data.jwtToken)
     return jwtDecode(data.jwtToken)
 }
- 
+
 
 /*
 Как происходит авторизация по токену

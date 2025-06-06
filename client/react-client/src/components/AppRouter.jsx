@@ -6,7 +6,7 @@ import { Context } from '../store/context';
 import { observer } from 'mobx-react-lite';
 
 const AppRouter = observer(() => {
-  const { user } = useContext(Context); // передали в обьект user ссылку на глобальный стейт с инфою и таким же названием (деструктуризацию провели)
+  const { user } = useContext(Context); 
   
 
   return (
@@ -27,6 +27,4 @@ const AppRouter = observer(() => {
 export default AppRouter;
 
 
-//уже реально сборочный аппарат, в Routes прилетает текущая url, map отрисовывает в массив все варианты Route(роутов), после чего Routes сравнивает текущий и предложенный, 
-// и отдает приказ отрендерится нужному Route в котором лежит нужный компонент. Path лишь индикатор для Route, а element - то что нужно отрисовать
 

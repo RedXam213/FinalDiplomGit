@@ -11,7 +11,7 @@ const SideBar = observer(() => {
   const { device } = useContext(Context);
 
   return (
-    <Card style={{ height: "100vh",  padding: "15px" }}>
+    <Card style={{ height: "120vh",  padding: "15px" }}>
       <Stack gap={3}>
         <TypeBar />
         
