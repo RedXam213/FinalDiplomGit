@@ -73,14 +73,12 @@ class deviceController {
     } else if (sortOrder === "newest") {
       order.push(["createdAt", "DESC"])
     }
-
     const devices = await Device.findAndCountAll({
       where,
       limit,
       offset,
       order
     });
-
     return res.json(devices);
   }
 

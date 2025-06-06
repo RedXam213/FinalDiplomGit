@@ -63,13 +63,11 @@ const Shop = observer(() => {
       <Container className="mt-5">
           <NamePath /> 
       <Row className="g-4">
-        
         <Col md={3}>
           <div className='sidebox'>
             <SideBar />
           </div>
         </Col>
-          
         <Col md={9}>
         <div className="content-box">
           <SortUpDownButtons />

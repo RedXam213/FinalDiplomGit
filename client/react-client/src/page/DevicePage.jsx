@@ -29,7 +29,7 @@ const DevicePage = observer(() => {
     }
   };
 
- 
+
   const GoBackButt = () => {
     navigate(-1);
   };
