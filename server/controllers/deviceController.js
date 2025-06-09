@@ -41,7 +41,7 @@ class deviceController {
   async getAll(req, res) {
     let { brandId, typeId, limit, page, name, minPrice, maxPrice, sortOrder } = req.query;
     page = page || 1;
-    limit = limit || 8;
+    limit = limit || 6;
     let offset = page * limit - limit;
 
     const where = {};
