@@ -8,5 +8,4 @@ router.get('/', deviceController.getAll)
 router.get('/:id', deviceController.getOne)
 router.delete('/:id', middwareRole('ADMIN'), deviceController.delete)
 
-
 module.exports = router

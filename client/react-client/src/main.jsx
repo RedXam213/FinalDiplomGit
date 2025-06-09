@@ -10,7 +10,6 @@ import { Context } from './store/context';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
-console.log(import.meta.env.VITE_REACT_APP_API_URL)
 
 root.render(
   <Context.Provider value={{

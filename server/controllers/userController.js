@@ -19,12 +19,11 @@ class UserController {
          if (candidate) {
             return next(ApiError.badRequest('User already exists'))
          }
-         
          const hashPassword = await bcrypt.hash(password, 10)
          const user = await User.create({email, role, password: hashPassword})
          
          const backet = await Basket.create({userId: user.id})
-         
+
          const jwtToken = generateJWT(user.id, user.email, user.role)
          return res.json({jwtToken})
     }   
@@ -45,21 +44,7 @@ class UserController {
         const jwtToken = generateJWT(user.id, user.email, user.role) /*При возможности реализовать рефреш токена что бы не долбится в постоянную логинится*/
         return res.json({jwtToken}) 
     }
-    /*
-    async check(req, res, next) { 
-        const { id } = req.query
-        if (!id) {
-            return next(ApiError.badRequest('Не задан id'))
-        }
-        res.json(id)
-    }
-    
-   
-    async check(req, res, next) { 
-        res.json({message: "работает!!!"})
-    }
-    */
-    
+
     async check(req, res, next) { 
         const jwtToken = generateJWT(req.user.id, req.user.email, req.user.role)
         res.json({jwtToken})
@@ -68,13 +53,11 @@ class UserController {
     async delete(req, res) {
         const { id } = req.params
         const deleted = await User.destroy({where:{id}})
-
         if (deleted) {
             return res.json({message: 'Юзера видалено'})
         } else {
             return ApiError.badRequest('Юзера не знайдено')
         }
-
     }
 }
 
