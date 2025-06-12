@@ -1,8 +1,6 @@
 import React, { useContext, useEffect } from 'react'
-import TypeBar from '../components/TypeBar';
 import Pages from '../components/Pagination';
 import { Container, Row, Col } from "react-bootstrap";
-import BrandBar from '../components/BrandBar';
 import DeviceCatalog from '../components/DeviceCatalog';
 import { observer } from 'mobx-react-lite';
 import { Context } from '../store/context';
@@ -13,13 +11,11 @@ import NamePath from '../components/NamePath';
 import SortUpDownButtons from '../components/UpDownPriceButton';
 import '../styles/Global.css';
 
-
 const Shop = observer(() => {
   const { device } = useContext(Context);
-  
 
   useEffect(() => {
-      // ініціалізація
+      
       getTypes().then(data => device.setTypes(data))
       getBrands().then(data => device.setBrands(data))
       getDevices(null, null, 1, device.limit).then(data => {
@@ -46,8 +42,6 @@ const Shop = observer(() => {
       })
   }, [device.selectedType,device.selectedBrands,device.priceFilter,device.sortOrder])
 
-
-    
   useEffect(() => {
     const { min, max } = device.priceFilter;
     getDevices(device.selectedType?.id, device.selectedBrands, device.page, device.limit, null, min, max, device.sortOrder)
@@ -57,8 +51,6 @@ const Shop = observer(() => {
       })
   }, [device.page])
 
- 
-  
     return (
       <Container className="mt-5">
           <NamePath /> 
