@@ -27,7 +27,7 @@ class UserController {
          const jwtToken = generateJWT(user.id, user.email, user.role)
          return res.json({jwtToken})
     }   
-    
+     
     async login(req,res,next) { 
         const {email, password} = req.body
         const user = await User.findOne({where:{email}})
@@ -41,7 +41,7 @@ class UserController {
             return next(ApiError.badRequest('incorrect password'))
         }
 
-        const jwtToken = generateJWT(user.id, user.email, user.role) /*При возможности реализовать рефреш токена что бы не долбится в постоянную логинится*/
+        const jwtToken = generateJWT(user.id, user.email, user.role) 
         return res.json({jwtToken}) 
     }
 
